@@ -1,0 +1,42 @@
+<h1>My Pet</h1>
+<% if @all_values[0] == "" %>
+<form action='/name' method='post'>
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text">
+  <button type="submit">submit</button>
+</form>
+<% end %>
+
+<h3>My Pet's Stats</h3>
+<ul>
+  <li>Name: <%= @all_values[0] %></li>
+  <li>Food Level: <%= @all_values[1] %></li>
+  <li>Sleep Level: <%= @all_values[2] %></li>
+  <li>Activity Level: <%= @all_values[3] %></li>
+</ul>
+
+<h2>Feeding Time!</h2>
+<form action='/feed' method='post'>
+  <label for="food">Item</label>
+  <select id="food" name="food">
+    <option value="apple">Apple</option>
+    <option value="banana">Banana</option>
+  </select>
+  <button type='submit'>feed</button>
+</form>
+
+<h2>Play Time!</h2>
+<form action='/play' method='post'>
+  <label for="play">Activity</label>
+  <select id="play" name="play">
+    <option value="fetch">Fetch</option>
+    <option value="race">Race</option>
+  </select>
+  <button type='submit'>play</button>
+</form>
+<br><br><br><br><br><br><br><br>
+<form action='/reset' method="post">
+  <label for='reset'><label>
+    <input type="text" name="reset">
+  <button type="submit">reset</button>
+</form>
